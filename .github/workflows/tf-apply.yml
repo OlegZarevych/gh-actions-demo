@@ -1,0 +1,28 @@
+name: Terraform Apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+    apply:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+          name: Checkout source code
+
+        - uses: hashicorp/setup-terraform@v3
+          name: Setup Terraform
+
+        - name: Terraform Init
+          id: init
+          run: terraform init
+        
+        - uses: terraform-cache/terraform-cache@v1
+
+        - name: Terraform Validate
+          id: validate
+          run: terraform validate -no-color
+        
+        - name: Terraform Plan
+          id: plan
+          run: terraform plan -no-color
