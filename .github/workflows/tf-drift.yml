@@ -1,9 +1,9 @@
 name: Terraform Configuration Drift Detection
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *' # Each 10 mins
+    - cron: '* */10 * * *' # Each 10 mins
 
 #Special permissions required for OIDC authentication
 permissions:
