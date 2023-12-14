@@ -1,7 +1,7 @@
-name: Terraform Plan Check on push
+name: Terraform Destroy
 
 on:
-  push:
+  workflow_dispatch:
 
 permissions:
     id-token: write
