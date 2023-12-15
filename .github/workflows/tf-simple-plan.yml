@@ -1,7 +1,7 @@
 name: Terraform Plan Check on push
 
 on:
-  push:
+  push:  
 
 permissions:
     id-token: write
@@ -37,3 +37,5 @@ jobs:
         - name: Terraform Plan
           id: plan
           run: terraform plan 
+
+          
